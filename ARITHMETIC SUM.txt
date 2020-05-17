@@ -1,0 +1,23 @@
+MVI B,01H
+MVI C,05H
+MVI D,01H
+MVI H,00H
+MVI A,00H
+MOV E,C
+DCR E
+L1: ADD B
+    DCR C
+    JNZ L1
+    MOV H,A
+L2: MOV C,E
+    MVI A,00H
+L3: ADD D
+    DCR C
+    JNZ L3
+    ADD H
+    MOV H,A
+    DCR E
+    JNZ L2
+    MOV A,H
+    STA 0000
+HLT

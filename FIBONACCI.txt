@@ -1,0 +1,16 @@
+LXI H,0000
+MVI B,00H
+MVI D,01H
+MVI C,05H
+MOV M,B
+INX H
+MOV M,D
+L1: MOV A,B
+    ADD D
+    MOV B,D
+    MOV D,A
+    INX H
+    MOV M,A
+    DCR C
+    JNZ L1
+HLT

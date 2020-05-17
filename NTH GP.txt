@@ -1,0 +1,22 @@
+MVI B,01H
+MVI C,06H
+MVI D,02H
+MVI H,01H
+DCR C
+L1: CALL L2
+    DCR C
+    JNZ L1
+    MVI A,00H
+L4: ADD H
+    DCR B
+    JNZ L4
+    STA 0000
+    HLT
+L2: MVI A,00H
+    MOV E,D
+L3: ADD H
+    DCR E
+    JNZ L3
+    MOV H,A
+    RET
+    
